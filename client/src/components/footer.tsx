@@ -1,127 +1,144 @@
-import Link from "next/link";
-import { Github, Twitter, Linkedin, Mail, Heart } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Link } from "react-router";
+import { motion } from "motion/react";
 
-export default function Footer() {
+export function Footer() {
+  const currentYear = new Date().getFullYear();
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 }
+  };
+
   return (
-    <footer className="bg-black border-t border-zinc-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand Section */}
-          <div className="col-span-1 md:col-span-2">
-            <Link href="/" className="text-2xl font-bold text-white mb-4 block">
-              NextTemplate
+    <footer className="relative z-50 bg-[#000000] text-gray-300 border-t border-gray-800 font-sans tracking-wide">
+      <div className="container mx-auto px-4 py-16">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12"
+        >
+          {/* Brand */}
+          <motion.div variants={item} className="lg:col-span-1 space-y-6">
+            <Link to="/" className="flex items-center gap-3 group w-fit">
+              <div className="w-40 h-40 flex items-center justify-center">
+                <img src="/zen logo.png" alt="ZenworoX Logo" className="w-full h-full object-contain" />
+              </div>
+
             </Link>
-            <p className="text-zinc-400 mb-6 max-w-md">
-              A production-ready Next.js template with TypeScript, Tailwind CSS, and shadcn/ui components. 
-              Built for developers who want to ship fast.
+            <p className="text-sm text-gray-400 leading-relaxed font-light tracking-wide">
+              Empowering the next generation with future-ready technology education, innovation, and skills since 2018.
             </p>
-            <div className="flex space-x-4">
-              <Link 
-                href="https://github.com/yourusername/nextjs-template" 
-                className="text-zinc-400 hover:text-white transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Github className="h-5 w-5" />
-              </Link>
-              <Link 
-                href="https://twitter.com/yourusername" 
-                className="text-zinc-400 hover:text-white transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Twitter className="h-5 w-5" />
-              </Link>
-              <Link 
-                href="https://linkedin.com/in/yourusername" 
-                className="text-zinc-400 hover:text-white transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Linkedin className="h-5 w-5" />
-              </Link>
-              <Link 
-                href="mailto:hello@nexttemplate.com" 
-                className="text-zinc-400 hover:text-white transition-colors"
-              >
-                <Mail className="h-5 w-5" />
-              </Link>
+            <div className="flex gap-3 pt-2">
+              {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
+                <a
+                  key={i}
+                  href="#"
+                  className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#00F5FF] hover:border-[#00F5FF] hover:text-black transition-all duration-300 group"
+                >
+                  <Icon className="h-4 w-4 text-gray-400 group-hover:text-black transition-colors" strokeWidth={1.5} />
+                </a>
+              ))}
             </div>
-          </div>
+          </motion.div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-white font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/features" className="text-zinc-400 hover:text-white transition-colors">
-                  Features
-                </Link>
+          {/* Programs */}
+          <motion.div variants={item} className="space-y-6">
+            <h3 className="text-white font-bold mb-6 text-sm uppercase tracking-widest">Programs</h3>
+            <ul className="space-y-4">
+              <li><Link to="/modules" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-light hover:pl-2 duration-300 block tracking-wide">Artificial Intelligence</Link></li>
+              <li><Link to="/modules" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-light hover:pl-2 duration-300 block tracking-wide">Robotics Lab</Link></li>
+              <li><Link to="/modules" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-light hover:pl-2 duration-300 block tracking-wide">VFX & Animation</Link></li>
+              <li><Link to="/modules" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-light hover:pl-2 duration-300 block tracking-wide">Coding & Development</Link></li>
+              <li><Link to="/free-lab-setup" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-light hover:pl-2 duration-300 block tracking-wide">STEM Integration</Link></li>
+            </ul>
+          </motion.div>
+
+          {/* Company */}
+          <motion.div variants={item} className="space-y-6">
+            <h3 className="text-white font-bold mb-6 text-sm uppercase tracking-widest">Company</h3>
+            <ul className="space-y-4">
+              <li><Link to="/about" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-light hover:pl-2 duration-300 block tracking-wide">About Us</Link></li>
+              <li><Link to="/about" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-light hover:pl-2 duration-300 block tracking-wide">Success Stories</Link></li>
+              <li><Link to="/annual-event" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-light hover:pl-2 duration-300 block tracking-wide">Annual Event</Link></li>
+              <li><Link to="/internship" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-light hover:pl-2 duration-300 block tracking-wide">Internship</Link></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-light hover:pl-2 duration-300 block tracking-wide">Contact</Link></li>
+            </ul>
+          </motion.div>
+
+          {/* Contact */}
+          <motion.div variants={item} className="space-y-6">
+            <h3 className="text-white font-bold mb-6 text-sm uppercase tracking-widest">Get in Touch</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-4 group">
+                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-[#00F5FF]/10 transition-colors">
+                  <Mail className="h-4 w-4 text-[#00F5FF]" strokeWidth={1.5} />
+                </div>
+                <span className="text-sm text-gray-400 font-light group-hover:text-white transition-colors tracking-wide">info@zenworox.com</span>
               </li>
-              <li>
-                <Link href="/docs" className="text-zinc-400 hover:text-white transition-colors">
-                  Documentation
-                </Link>
+              <li className="flex items-start gap-4 group">
+                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-[#00F5FF]/10 transition-colors">
+                  <Phone className="h-4 w-4 text-[#00F5FF]" strokeWidth={1.5} />
+                </div>
+                <span className="text-sm text-gray-400 font-light group-hover:text-white transition-colors tracking-wide">+91 98765 43210</span>
               </li>
-              <li>
-                <Link href="/examples" className="text-zinc-400 hover:text-white transition-colors">
-                  Examples
-                </Link>
-              </li>
-              <li>
-                <Link href="/changelog" className="text-zinc-400 hover:text-white transition-colors">
-                  Changelog
-                </Link>
+              <li className="flex items-start gap-4 group">
+                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-[#00F5FF]/10 transition-colors">
+                  <MapPin className="h-4 w-4 text-[#00F5FF]" strokeWidth={1.5} />
+                </div>
+                <span className="text-sm text-gray-400 font-light group-hover:text-white transition-colors tracking-wide">
+                  KHASRA 260 KHATA 00061, C/O MAMTA YADAV SUPERCITY,<br />
+                  R.K.University, Bareilly, Bareilly- 243006, Uttar Pradesh
+                </span>
               </li>
             </ul>
-          </div>
+          </motion.div>
 
-          {/* Resources */}
-          <div>
-            <h3 className="text-white font-semibold mb-4">Resources</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/blog" className="text-zinc-400 hover:text-white transition-colors">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link href="/support" className="text-zinc-400 hover:text-white transition-colors">
-                  Support
-                </Link>
-              </li>
-              <li>
-                <Link href="/community" className="text-zinc-400 hover:text-white transition-colors">
-                  Community
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-zinc-400 hover:text-white transition-colors">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Bottom Section */}
-        <div className="border-t border-zinc-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="text-zinc-400 text-sm mb-4 md:mb-0">
-            © 2025 NextTemplate. All rights reserved.
-          </div>
-          
-          <div className="flex items-center space-x-6 text-sm">
-            <Link href="/privacy" className="text-zinc-400 hover:text-white transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="text-zinc-400 hover:text-white transition-colors">
-              Terms of Service
-            </Link>
-            <div className="flex items-center text-zinc-400">
-              Made with <Heart className="h-4 w-4 mx-1 text-red-500" /> by developers
+          {/* Map Location */}
+          <motion.div variants={item} className="lg:col-span-1 space-y-6">
+            <h3 className="text-white font-bold mb-6 text-sm uppercase tracking-widest">Find Us</h3>
+            <div className="w-full h-48 rounded-xl overflow-hidden border border-gray-800 relative group">
+              <iframe
+                src="https://maps.google.com/maps?q=R.K.University%20Bareilly&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+              ></iframe>
+              <div className="absolute inset-0 border border-white/5 pointer-events-none rounded-xl"></div>
             </div>
+          </motion.div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+          className="border-t border-gray-800 pt-8 mt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 font-light uppercase tracking-wide"
+        >
+          <p className="tracking-wide">&copy; {currentYear} ZENWOROX TECHNOLOGY LABS PRIVATE LIMITED. All rights reserved.</p>
+          <div className="flex gap-6 mt-4 md:mt-0">
+            <Link to="/privacy" className="hover:text-[#00F5FF] transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-[#00F5FF] transition-colors">Terms of Service</Link>
+            <Link to="#" className="hover:text-[#00F5FF] transition-colors">Sitemap</Link>
           </div>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );
