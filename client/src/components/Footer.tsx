@@ -38,7 +38,7 @@ export function Footer() {
               </div>
 
             </Link>
-            <p className="text-sm text-gray-400 leading-relaxed font-light tracking-wide">
+            <p className="text-sm text-gray-400 leading-relaxed font-bold tracking-wide">
               Empowering the next generation with future-ready technology education, innovation, and skills since 2018.
             </p>
             <div className="flex gap-3 pt-2">
@@ -58,11 +58,11 @@ export function Footer() {
           <motion.div variants={item} className="space-y-6">
             <h3 className="text-white font-bold mb-6 text-sm uppercase tracking-widest">Programs</h3>
             <ul className="space-y-4">
-              <li><Link to="/modules" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-light hover:pl-2 duration-300 block tracking-wide">Artificial Intelligence</Link></li>
-              <li><Link to="/modules" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-light hover:pl-2 duration-300 block tracking-wide">Robotics Lab</Link></li>
-              <li><Link to="/modules" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-light hover:pl-2 duration-300 block tracking-wide">VFX & Animation</Link></li>
-              <li><Link to="/modules" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-light hover:pl-2 duration-300 block tracking-wide">Coding & Development</Link></li>
-              <li><Link to="/free-lab-setup" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-light hover:pl-2 duration-300 block tracking-wide">STEM Integration</Link></li>
+              <li><Link to="/modules" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-bold hover:pl-2 duration-300 block tracking-wide">Artificial Intelligence</Link></li>
+              <li><Link to="/modules" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-bold hover:pl-2 duration-300 block tracking-wide">Robotics Lab</Link></li>
+              <li><Link to="/modules" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-bold hover:pl-2 duration-300 block tracking-wide">VFX & Animation</Link></li>
+              <li><Link to="/modules" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-bold hover:pl-2 duration-300 block tracking-wide">Coding & Development</Link></li>
+              <li><Link to="/free-lab-setup" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-bold hover:pl-2 duration-300 block tracking-wide">STEM Integration</Link></li>
             </ul>
           </motion.div>
 
@@ -70,11 +70,11 @@ export function Footer() {
           <motion.div variants={item} className="space-y-6">
             <h3 className="text-white font-bold mb-6 text-sm uppercase tracking-widest">Company</h3>
             <ul className="space-y-4">
-              <li><Link to="/about" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-light hover:pl-2 duration-300 block tracking-wide">About Us</Link></li>
-              <li><Link to="/about" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-light hover:pl-2 duration-300 block tracking-wide">Success Stories</Link></li>
-              <li><Link to="/annual-event" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-light hover:pl-2 duration-300 block tracking-wide">Annual Event</Link></li>
-              <li><Link to="/internship" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-light hover:pl-2 duration-300 block tracking-wide">Internship</Link></li>
-              <li><Link to="/contact" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-light hover:pl-2 duration-300 block tracking-wide">Contact</Link></li>
+              <li><Link to="/about" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-bold hover:pl-2 duration-300 block tracking-wide">About Us</Link></li>
+              <li><Link to="/about" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-bold hover:pl-2 duration-300 block tracking-wide">Success Stories</Link></li>
+              <li><Link to="/annual-event" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-bold hover:pl-2 duration-300 block tracking-wide">Annual Event</Link></li>
+              <li><Link to="/internship" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-bold hover:pl-2 duration-300 block tracking-wide">Internship</Link></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-[#00F5FF] transition-colors text-sm font-bold hover:pl-2 duration-300 block tracking-wide">Contact</Link></li>
             </ul>
           </motion.div>
 
@@ -86,19 +86,19 @@ export function Footer() {
                 <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-[#00F5FF]/10 transition-colors">
                   <Mail className="h-4 w-4 text-[#00F5FF]" strokeWidth={1.5} />
                 </div>
-                <span className="text-sm text-gray-400 font-light group-hover:text-white transition-colors tracking-wide">info@zenworox.com</span>
+                <span className="text-sm text-gray-400 font-bold group-hover:text-white transition-colors tracking-wide">info@zenworox.com</span>
               </li>
               <li className="flex items-start gap-4 group">
                 <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-[#00F5FF]/10 transition-colors">
                   <Phone className="h-4 w-4 text-[#00F5FF]" strokeWidth={1.5} />
                 </div>
-                <span className="text-sm text-gray-400 font-light group-hover:text-white transition-colors tracking-wide">+91 98765 43210</span>
+                <span className="text-sm text-gray-400 font-bold group-hover:text-white transition-colors tracking-wide">+91 98765 43210</span>
               </li>
               <li className="flex items-start gap-4 group">
                 <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-[#00F5FF]/10 transition-colors">
                   <MapPin className="h-4 w-4 text-[#00F5FF]" strokeWidth={1.5} />
                 </div>
-                <span className="text-sm text-gray-400 font-light group-hover:text-white transition-colors tracking-wide">
+                <span className="text-sm text-gray-400 font-bold group-hover:text-white transition-colors tracking-wide">
                   KHASRA 260 KHATA 00061, C/O MAMTA YADAV SUPERCITY,<br />
                   R.K.University, Bareilly, Bareilly- 243006, Uttar Pradesh
                 </span>
@@ -130,7 +130,7 @@ export function Footer() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="border-t border-gray-800 pt-8 mt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 font-light uppercase tracking-wide"
+          className="border-t border-gray-800 pt-8 mt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 font-bold uppercase tracking-wide"
         >
           <p className="tracking-wide">&copy; {currentYear} ZENWOROX TECHNOLOGY LABS PRIVATE LIMITED. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
